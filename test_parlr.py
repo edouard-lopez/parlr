@@ -51,5 +51,26 @@ class DictionaryTestCase(unittest.TestCase):
 
         self.assertEqual([lexical_unit], dictionary.lexical_units)
 
+
+class Learner(object):
+    def __init__(self):
+        self.known_characters = []
+
+    def learn(self, lexical_unit):
+        self.known_characters.append(lexical_unit)
+
+
+class LearnerTestCase(unittest.TestCase):
+    def test_learner_knows_a_list_of_characters(self):
+        learner = Learner()
+
+        self.assertEqual([], learner.known_characters)
+
+    def test_learner_can_learn_lexical_unit(self):
+        learner = Learner()
+
+        lexical_unit = 'pakeha'
+        learner.learn(lexical_unit)
+
 if __name__ == '__main__':
     unittest.main()
