@@ -72,5 +72,7 @@ class LearnerTestCase(unittest.TestCase):
         lexical_unit = 'pakeha'
         learner.learn(lexical_unit)
 
+        self.assertEqual([lexical_unit], learner.known_characters)
+
 if __name__ == '__main__':
     unittest.main()
