@@ -54,6 +54,7 @@ class DictionaryTestCase(unittest.TestCase):
 
 class Learner(object):
     def __init__(self):
+        self.level = 0
         self.known_characters = []
 
     def learn(self, lexical_unit):
@@ -85,6 +86,17 @@ class LearnerTestCase(unittest.TestCase):
         learner.forget(lexical_unit)
 
         self.assertEqual([], learner.known_characters)
+
+    def test_learner_has_a_linguistic_level(self):
+        # arrange
+        learner = Learner()
+
+        # act
+
+        # assert
+        self.assertEqual(0, learner.level)
+
+
 
 if __name__ == '__main__':
     unittest.main()
