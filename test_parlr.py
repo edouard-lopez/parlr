@@ -59,6 +59,9 @@ class Learner(object):
     def learn(self, lexical_unit):
         self.known_characters.append(lexical_unit)
 
+    def forget(self, lexical_unit):
+        lexical_unit_index = self.known_characters.index(lexical_unit)
+        del self.known_characters[lexical_unit_index]
 
 class LearnerTestCase(unittest.TestCase):
     def test_learner_knows_a_list_of_characters(self):
@@ -73,6 +76,15 @@ class LearnerTestCase(unittest.TestCase):
         learner.learn(lexical_unit)
 
         self.assertEqual([lexical_unit], learner.known_characters)
+
+    def test_learner_can_forget_a_lexical_unit(self):
+        learner = Learner()
+
+        lexical_unit = 'pakeha'
+        learner.learn(lexical_unit)
+        learner.forget(lexical_unit)
+
+        self.assertEqual([], learner.known_characters)
 
 if __name__ == '__main__':
     unittest.main()
