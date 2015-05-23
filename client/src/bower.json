@@ -1,0 +1,13 @@
+{
+    "private": true,
+    "name": "parlr-ui",
+    "author": "Édouard Lopez <dev@edouard-lopez.com>",
+    "dependencies": {
+        "angular": "1.3.x",
+        "angular-route": "1.3.x",
+        "restangular": "1.5.x",
+    },
+    "devDependencies": {
+        "angular-mocks": "1.3.x"
+    }
+}
